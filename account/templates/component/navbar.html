@@ -1,0 +1,41 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-info">
+    <div class="container-fluid">
+
+        <div class="navbar-brand">
+            <img src="{% static 'logo.png' %}" class="logo" alt="logo">
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav d-flex w-100">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="{% url 'home' %}">Home</a>
+                </li>
+                {% if login == True %}
+
+                <li class="nav-item dropdown d-flex ms-auto">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <img src="{% static 'person-fill.svg' %}" class="img" style="filter: invert(1);"/>
+                    </a>
+                    <ul class="dropdown-menu" style="left:-210%; right: 0;">
+                        <li><a class="dropdown-item" href="{% url 'profile_view' %}">Profile View</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+                    </ul>
+                </li>
+                {% else %}
+                <li class="nav-item d-flex ms-auto">
+                    <a class="btn btn-outline-light me-2" href="{% url 'signin' %}">Sign In</a>
+                    <a class="btn btn-outline-light" href="{% url 'customer_signup' %}">Sign Up</a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>

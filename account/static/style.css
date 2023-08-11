@@ -1,0 +1,19 @@
+
+nav ul li a:hover{
+    font-weight: bolder;
+}
+.search{
+    display: absolute;
+    float: right;
+}
+
+.card {
+    max-width: 93vw;
+    margin: 37px auto;
+    font-family: 'Ubuntu', sans-serif;
+}
+.logo{
+    height: 50px;
+    width: 50px;
+}
+

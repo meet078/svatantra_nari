@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% block section %}
+    {% include "component/navbar.html" with login=login %}
+    <div class="container col-6">
+
+        <form class="row g-3 needs-validation bg-light shadow px-2 p-3 mb-5 mt-5 py-4 bg-body rounded" novalidate >
+            <div class="col-8">
+                <input type="text" class="form-control" placeholder="First Name" value="{{user.first_name}}" name="Fname" id="Fname" readonly required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+
+                <input type="text" class="form-control mt-3" placeholder="Last Name" value="{{user.last_name}}" name="Lname" id="Lname" readonly required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+                
+                <input type="Email" class="form-control mt-3" placeholder="E-mail" value="{{user.email}}" name="email" id="email" readonly required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+                
+                <input type="number" class="form-control mt-3" placeholder="Phone" value="{{user.phone}}" name="no"  id="no" readonly required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+
+                <input type="text" class="form-control mt-3" placeholder="Pan Card Number" value="{{user.pan}}" name="panno" id="panno" readonly required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+            </div>
+            
+            <img src="/media/{{user.profile_photo}}" class="img-thumbnail" style="width: 200px; height:250px;" alt="...">
+
+            <div class="col-12">
+                <textarea type="text" class="form-control" placeholder="Address" name="add" id="add" readonly required>{{user.address}}</textarea>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+            </div>
+
+            <div class="col-6">
+                <input type="text" class="form-control"  value="Cooking" name="ex"  id="ex" readonly required>
+                <div class="valid-feedback">
+                 Looks good!
+                </div>
+                
+              </div>
+
+                <div class="col-6">
+                    <input type="number" class="form-control" placeholder="Experience" value="4" name="ex"  id="ex" readonly required>
+                     <div class="valid-feedback">
+                      Looks good!
+                     </div>
+                </div>
+
+              <div class="col-12">
+                  <textarea type="text" class="form-control" placeholder="Description" rows="8" name="skil" id="skil" readonly required>{{user.description}}</textarea>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+              </div>
+            
+            <div class="col-12 d-grid gap-2">
+            <!-- <button class="btn btn-info" id="submit" type="button">Edit Profile</button> -->
+            </div>
+      </form>
+    </div>
+    <script>
+        (function () {
+          'use strict'
+        
+          var forms = document.querySelectorAll('.needs-validation')
+          var submit = document.getElementById('submit')
+          
+          Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+              submit.addEventListener('click', function (event) {
+                if (!form.checkValidity()) {
+                  event.preventDefault()
+                  event.stopPropagation()
+                }
+        
+                form.classList.add('was-validated')
+              }, false)
+            })
+        })()
+        </script>
+{% endblock  %}

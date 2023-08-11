@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Complete Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  </head>
+  <body style="min-height: 100vh; background-color:#f0f2f5;">
+    <div class="container col-6">
+
+        <form class="row g-3 needs-validation bg-light shadow px-2 p-3 mb-5 mt-5 py-4 bg-body rounded" novalidate >
+            <div class="col-8">
+                <input type="text" class="form-control" placeholder="First Name" value="Hitesh" name="Fname" id="Fname" readonly required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+
+                <input type="text" class="form-control mt-3" placeholder="Last Name" value="Prajapati" name="Lname" id="Lname" readonly required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+                
+                <input type="Email" class="form-control mt-3" placeholder="E-mail" value="mr.hiteshprajapati2001@gmail.com" name="email" id="email" readonly required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+                
+                <input type="number" class="form-control mt-3" placeholder="Phone" value="8849588189" name="no"  id="no" readonly required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+
+                <input type="text" class="form-control mt-3" placeholder="Pan Card Number" value="FKUS28685" name="panno" id="panno" readonly required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+            </div>
+            
+            <img src="demo-photo.jpg" class="img-thumbnail" style="width: 200px; height:250px;" alt="...">
+
+            <div class="col-12">
+                <textarea type="text" class="form-control" placeholder="Address" name="add" id="add" readonly required>Shreeji appatment, near Law Garden, navrangpura, Ahmdabad</textarea>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+            </div>
+
+            <div class="col-6">
+                <select class="form-select" id="Catogory" name="Catogory"required>
+                  <option selected disabled value="">Choose Your Catogory...</option>
+                  <option>Tailoring</option>
+                  <option>Cooking</option>
+                  <option>Home Decoration</option>
+                  <option>Beautician</option>
+                </select>
+                <div class="invalid-feedback">
+                  Please select a valid state.
+                </div>
+              </div>
+
+                <div class="col-6">
+                    <input type="number" class="form-control" placeholder="Experience" value="" name="ex"  id="ex" required>
+                     <div class="valid-feedback">
+                      Looks good!
+                     </div>
+                </div>
+
+              <div class="col-12">
+                  <textarea type="text" class="form-control" placeholder="Description" name="skil" id="skil" required></textarea>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+              </div>
+            
+            <div class="col-12 d-grid gap-2">
+            <button class="btn btn-info" id="submit" type="submit">Save Profile</button>
+            </div>
+
+      </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <script>
+        (function () {
+          'use strict'
+        
+          var forms = document.querySelectorAll('.needs-validation')
+          var submit = document.getElementById('submit')
+          
+          Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+              submit.addEventListener('click', function (event) {
+                if (!form.checkValidity()) {
+                  event.preventDefault()
+                  event.stopPropagation()
+                }
+        
+                form.classList.add('was-validated')
+              }, false)
+            })
+        })()
+        </script>  
+</body>
+</html>
